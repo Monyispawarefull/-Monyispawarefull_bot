@@ -1,0 +1,81 @@
+Html.
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel - Newincome132_bot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+      background: #fdfdfd;
+    }
+    h2 {
+      color: #333;
+    }
+    input, button, select {
+      padding: 10px;
+      margin: 8px 0;
+      width: 100%;
+      max-width: 400px;
+      display: block;
+    }
+    .block {
+      margin-bottom: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>👑 Admin Panel - Newincome132_bot</h2>
+
+  <div class="block">
+    <label>📦 Change Monetag Zone ID</label>
+    <input type="text" id="zoneId" placeholder="Enter new Zone ID" />
+    <button onclick="saveSettings()">✅ Save</button>
+  </div>
+
+  <div class="block">
+    <label>🎯 Points per Ad</label>
+    <input type="number" id="pointPerAd" placeholder="Enter point per ad" />
+  </div>
+
+  <div class="block">
+    <label>🔌 VPN Toggle</label>
+    <select id="vpnToggle">
+      <option value="on">ON</option>
+      <option value="off">OFF</option>
+    </select>
+  </div>
+
+  <div class="block">
+    <label>⛔ Block User ID</label>
+    <input type="text" placeholder="Enter user Telegram ID to block" />
+    <button>🚫 Block</button>
+  </div>
+
+  <div class="block">
+    <label>💸 Withdraw Requests</label>
+    <ul>
+      <li>UserID: 5836656895 - Request: 100 Points - [✅ Approve] [❌ Reject]</li>
+    </ul>
+  </div>
+
+  <script>
+    function saveSettings() {
+      const config = {
+        zone_id: document.getElementById('zoneId').value,
+        point_per_ad: parseInt(document.getElementById('pointPerAd').value),
+        vpn_status: document.getElementById('vpnToggle').value
+      };
+
+      // Simulate saving to your backend (Firebase, JSONBin, etc.)
+      alert("✅ Settings saved:\n\n" + JSON.stringify(config, null, 2));
+    }
+  </script>
+</body>
+</html>
